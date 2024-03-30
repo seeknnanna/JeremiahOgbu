@@ -1,25 +1,11 @@
-# Define a variable to store the maximum number of stars, which is 5 in this case
-# Begin a for loop that iterates from 1 to the maximum number of stars, inclusive
-# If the current number of stars is less than or equal to the loop index
-# Print "*" multiplied by the current number of stars
-# Begin a second for loop, running from the maximum number of stars minus 1 to 1, inclusive
-# If the current number of stars is less than or equal to the loop index
-# Print "*" multiplied by the current number of stars
+# Define a variable to store the maximum number of layers in the pattern, which is 5 in this case
+peak_star_count = 5
 
-# Define a variable to store the maximum number of stars
-max_stars = 5
-
-# Begin a for loop that iterates from 1 to the maximum number of stars, inclusive
-for i in range(1, max_stars + 1):
-    # If the current number of stars is less than or equal to the loop index
-    if i <= max_stars:
-        # Print "*" multiplied by the current number of stars
-        print("*" * i)
-
-# Begin a second for loop, running from the maximum number of stars minus 1 to 1, inclusive
-for i in range(max_stars - 1, 0, -1):
-    # If the current number of stars is less than or equal to the loop index
-    if i <= max_stars:
-        # Print "*" multiplied by the current number of stars
-        print("*" * i)
-
+# Generate a star pattern that increases to the peak and decreases
+# Each line prints a number of stars (*) that corresponds to the line number
+# until the peak is reached and then reduces in the same pattern
+for i in range(1, peak_star_count * 2):
+    # Calculate the number of stars for the current line
+    # The pattern first scales up to the peak_star_count and then scales down
+    star_count = peak_star_count - abs(peak_star_count - i)
+    print("*" * star_count)
